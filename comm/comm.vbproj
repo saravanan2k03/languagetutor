@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82CEC5C7-1D64-4EA7-BD92-555F56B01949}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>comm.My.MyApplication</StartupObject>
+    <RootNamespace>comm</RootNamespace>
+    <AssemblyName>comm</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>comm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>comm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>9136350_45397.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Api.CommonProtos, Version=2.7.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.CommonProtos.2.7.0\lib\net461\Google.Api.CommonProtos.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax, Version=4.3.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.4.3.0\lib\net462\Google.Api.Gax.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Grpc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.Grpc.4.3.0\lib\net462\Google.Api.Gax.Grpc.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.59.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.59.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.59.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.59.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.59.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.59.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.59.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.59.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.59.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.59.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Speech.v1, Version=1.59.0.2940, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Speech.v1.1.59.0.2940\lib\net45\Google.Apis.Speech.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Speech.V1, Version=3.3.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Speech.V1.3.3.0\lib\net462\Google.Cloud.Speech.V1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.LongRunning, Version=3.0.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.LongRunning.3.0.0\lib\net462\Google.LongRunning.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.21.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Auth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Auth.2.51.0\lib\net462\Grpc.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.46.5\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.51.0\lib\net462\Grpc.Core.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Client, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Client.2.51.0\lib\netstandard2.0\Grpc.Net.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Common.2.51.0\lib\netstandard2.0\Grpc.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="LibFlacSharp, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibFlacSharp.1.0.4\lib\netstandard2.0\LibFlacSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.0.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.0.3\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.1.0\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.1.0\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.1.0\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Flac, Version=1.0.5702.29018, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Flac.1.0.5702.29018\lib\net45\NAudio.Flac.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Lame, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Lame.2.0.1\lib\netstandard2.0\NAudio.Lame.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.1.0\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.1.0\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WaveFormRenderer, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WaveFormRenderer.2.0.0\lib\netstandard2.0\NAudio.WaveFormRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.1.0\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.1.0\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.1\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="VisioForge.Core, Version=15.1.12.0, Culture=neutral, PublicKeyToken=5873e863f1bcda5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.15.1.12\lib\net472\VisioForge.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.Libs, Version=15.1.12.0, Culture=neutral, PublicKeyToken=2ff49422ec313cd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.15.1.12\lib\net472\VisioForge.Libs.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.MediaFramework, Version=15.1.12.0, Culture=neutral, PublicKeyToken=14e66dd726c53f11, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.15.1.12\lib\net472\VisioForge.MediaFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.Types, Version=15.1.12.0, Culture=neutral, PublicKeyToken=722de1c1c0a7f49e, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.15.1.12\lib\net472\VisioForge.Types.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="completed_screen.Designer.vb">
+      <DependentUpon>completed_screen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="completed_screen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messageform.Designer.vb">
+      <DependentUpon>Messageform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messageform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Dialog1.Designer.vb">
+      <DependentUpon>Dialog1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Dialog1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student\permission_eval.Designer.vb">
+      <DependentUpon>permission_eval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="student\permission_eval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\Evaluate\Reassign_Assessment.Designer.vb">
+      <DependentUpon>Reassign_Assessment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Evaluate\Reassign_Assessment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\dashboard\dashboard.Designer.vb">
+      <DependentUpon>dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\dashboard\dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\Permission\permission.Designer.vb">
+      <DependentUpon>permission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Permission\permission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\Assessment\add_ex.Designer.vb">
+      <DependentUpon>add_ex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Assessment\add_ex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\admin_panel.Designer.vb">
+      <DependentUpon>admin_panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\admin_panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="staff\Assessment\assign.Designer.vb">
+      <DependentUpon>assign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Assessment\assign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\Evaluate\assign_details.Designer.vb">
+      <DependentUpon>assign_details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Evaluate\assign_details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="communicationDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>communicationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="communicationDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>communicationDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="communicationDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>communicationDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.vb" />
+    <Compile Include="staff\Evaluate\list_assign_details.Designer.vb">
+      <DependentUpon>list_assign_details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Evaluate\list_assign_details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\Assessment\list_ex.Designer.vb">
+      <DependentUpon>list_ex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Assessment\list_ex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="globalfile.vb" />
+    <Compile Include="staff\Evaluate\list_students.Designer.vb">
+      <DependentUpon>list_students.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Evaluate\list_students.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="student\record.Designer.vb">
+      <DependentUpon>record.vb</DependentUpon>
+    </Compile>
+    <Compile Include="student\record.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\Assessment\select_by_staff.Designer.vb">
+      <DependentUpon>select_by_staff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Assessment\select_by_staff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student\student_assign.Designer.vb">
+      <DependentUpon>student_assign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="student\student_assign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staff\Assessment\update_ex.Designer.vb">
+      <DependentUpon>update_ex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Assessment\update_ex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="student_dashboard.Designer.vb">
+      <DependentUpon>student_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="student_dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userdatabaseDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userdatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="userdatabaseDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>userdatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Valuation\valuation.Designer.vb">
+      <DependentUpon>valuation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staff\Valuation\valuation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="waiting_screen.Designer.vb">
+      <DependentUpon>waiting_screen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="waiting_screen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="completed_screen.resx">
+      <DependentUpon>completed_screen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messageform.resx">
+      <DependentUpon>Messageform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Dialog1.resx">
+      <DependentUpon>Dialog1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Valuation\valuation.ta-IN.resx">
+      <DependentUpon>valuation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student\permission_eval.resx">
+      <DependentUpon>permission_eval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Evaluate\Reassign_Assessment.resx">
+      <DependentUpon>Reassign_Assessment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\dashboard\dashboard.resx">
+      <DependentUpon>dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Permission\permission.resx">
+      <DependentUpon>permission.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Assessment\add_ex.resx">
+      <DependentUpon>add_ex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\admin_panel.resx">
+      <DependentUpon>admin_panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Assessment\assign.resx">
+      <DependentUpon>assign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Evaluate\assign_details.resx">
+      <DependentUpon>assign_details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Evaluate\list_assign_details.resx">
+      <DependentUpon>list_assign_details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Assessment\list_ex.resx">
+      <DependentUpon>list_ex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Evaluate\list_students.resx">
+      <DependentUpon>list_students.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student\record.resx">
+      <DependentUpon>record.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Assessment\select_by_staff.resx">
+      <DependentUpon>select_by_staff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student\student_assign.resx">
+      <DependentUpon>student_assign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Assessment\update_ex.resx">
+      <DependentUpon>update_ex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staff\Valuation\valuation.resx">
+      <DependentUpon>valuation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_dashboard.resx">
+      <DependentUpon>student_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="waiting_screen.resx">
+      <DependentUpon>waiting_screen.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="communicationDataSet.xsc">
+      <DependentUpon>communicationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="communicationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>communicationDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="communicationDataSet.xss">
+      <DependentUpon>communicationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="communicationDataSet1.xsc">
+      <DependentUpon>communicationDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="communicationDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>communicationDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="communicationDataSet1.xss">
+      <DependentUpon>communicationDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="communicationDataSet2.xsc">
+      <DependentUpon>communicationDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="communicationDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>communicationDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="communicationDataSet2.xss">
+      <DependentUpon>communicationDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="userdatabaseDataSet.xsc">
+      <DependentUpon>userdatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userdatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>userdatabaseDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="userdatabaseDataSet.xss">
+      <DependentUpon>userdatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="userdatabaseDataSet1.xsc">
+      <DependentUpon>userdatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="userdatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>userdatabaseDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="userdatabaseDataSet1.xss">
+      <DependentUpon>userdatabaseDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2476166.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assignment-icon-19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="9136350_45397.ico" />
+    <None Include="Resources\360_F_205403329_q4rxr712Fmc8shTG9RTzRWmy2ghYU7iA1.jpg" />
+    <None Include="Resources\360_F_205403329_q4rxr712Fmc8shTG9RTzRWmy2ghYU7iA.jpg" />
+    <None Include="Resources\please-wait.gif" />
+    <None Include="Resources\loading2.gif" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\93690-completed-task-files.gif" />
+    <None Include="Resources\60796-robohead-loading %281%29.gif" />
+    <None Include="Resources\73778-wave-solo.gif" />
+    <None Include="Resources\pngwing.com.png" />
+    <None Include="Resources\llll.jpg" />
+    <None Include="Resources\giphy %281%29.gif" />
+    <None Include="Resources\loading1.gif" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\WhatsApp Image 2023-02-08 at 6.37.18 AM1.jpeg" />
+    <None Include="Resources\WhatsApp Image 2023-02-08 at 6.37.18 AM.jpeg" />
+    <None Include="Resources\WhatsApp Image 2023-02-08 at 6.38.22 AM.jpeg" />
+    <None Include="Resources\60796-robohead-loading.gif" />
+    <None Include="Resources\oooo.jpeg" />
+    <None Include="Resources\WhatsApp Image 2023-02-03 at 5.09.48 PM.jpeg" />
+    <None Include="Resources\130701-little-bit-of-reading.gif" />
+    <None Include="Resources\downloa.jpg" />
+    <None Include="Resources\55093133.png" />
+    <None Include="Resources\55093132.png" />
+    <None Include="Resources\kll.jpg" />
+    <None Include="Resources\3059431.png" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\5407355.png" />
+    <None Include="Resources\document-delete-2082021-1756332.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\kld.jpg" />
+    <None Include="Resources\55093131.png" />
+    <None Include="Resources\5509313.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Grpc.Core.2.46.5\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.5\build\net45\Grpc.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.5\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.5\build\net45\Grpc.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+    <Error Condition="!Exists('..\packages\NAudio.Lame.2.0.1\build\NAudio.Lame.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NAudio.Lame.2.0.1\build\NAudio.Lame.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Import Project="..\packages\NAudio.Lame.2.0.1\build\NAudio.Lame.targets" Condition="Exists('..\packages\NAudio.Lame.2.0.1\build\NAudio.Lame.targets')" />
+</Project>

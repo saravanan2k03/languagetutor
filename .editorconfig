@@ -1,0 +1,4 @@
+﻿[*.vb]
+
+# BC30420: 'Sub Main' was not found in 'comm'.
+dotnet_diagnostic.BC30420.severity = none
